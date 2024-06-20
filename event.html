@@ -3,9 +3,12 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
   <title>Lenni Art</title>
   <link rel="stylesheet" type="text/css" href="styles/styles.min.css">
-
+  <link rel="stylesheet" type="text/css" href="styles/styles.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +20,7 @@
       <a href="index.html" class="page-header__logo">
         <!---- <img src="assets/images/logo.svg" class="page-header__logo-img"/>   -->
         <svg class="page-header__logo-img" width="202" height="147">
-          <use xlink:href="assets/icons/symbols.svg#logo">
+          <use xlink:href="assets/icons/symbols.svg#logo" />
         </svg>
       </a>
       <nav class="page-header__nav">
@@ -25,15 +28,39 @@
         <a href="#" class="page-header__nav-link link">Блог</a>
         <a href="#" class="page-header__nav-link link">О нас</a>
         <a href="#" class="page-header__nav-link link">Контакты</a>
+
+        <div class="page-header__nav-user">
+          <a href="#" class="page-header__nav-user-link">
+            Александр С.
+          </a>
+          <a href="#" class="page-header__nav-logout">
+            <svg class="page-header__nav-logout-icon" width="24" height="24">
+              <use xlink:href="assets/icons/symbols.svg#log-in"></use>
+            </svg>
+          </a>
+        </div>
       </nav>
 
-      <a href="#" class="btn page-header__user-btn">Войти</a>
+      <div class="page-header__right-block">
+        <a href="#" class="page-header__user-btn">
+          Войти
+          <svg class="page-header__user-icon" width="24" height="24">
+            <use xlink:href="assets/icons/symbols.svg#user"></use>
+          </svg>
+        </a>
+
+        <button type="button" class="page-header__nav-toggle" id="js-navToggle" title="Войти"></button>
+      </div>
     </div>
   </header>
   <main class="main">
+    <div class="breadcrumbs">
+      <a href="../index.html" class="breadcrumbs__link">Главная</a>
+      <a href="../events.html" class="breadcrumbs__link">Мероприятия</a>
+    </div>
     <article class="event">
       <header class="event__header">
-        <h1 class="event__title">Вечер | The Best of Sade</h1>
+        <h1 class="event__title title">Вечер | The Best of Sade</h1>
 
         <div class="event__about">
           <div class="event__info event__gridtext1">
@@ -47,7 +74,7 @@
           </div>
 
           <picture class="event__picture event__gridP">
-            <img class="event__image " src="assets/images/Sade.png" alt="Sade" />
+            <img class="event__image " src="assets/images/event/Sade.png" alt="Sade" />
           </picture>
 
           <div class="event__info  event__gridtext2">
@@ -79,7 +106,6 @@
 
           <br />
 
-
           <h5>The Best of Sade</h5>
           <p>Первый альбом-компиляция Sade, выпущенный в 1994 году. Он содержит 9 треков, включая самые популярные хиты группы, раритеты и их любимые треки. </p>
           <p>Группа продемонстрировала необычайное долголетие и креативность своей творческой карьеры. Она лидировала музыкальных чартах с 1994 по 1995 год, став четырехкратно платиновой в США и продав более 2 миллионов копий в Европе.</p>
@@ -101,67 +127,81 @@
             <h4 class="reserve__section-title reserve__section-title--mb30">
               Забронировать столик
             </h4>
+
             <label class="reserve__check check check--red">
               <input type="checkbox" name="table_1" class="check__input" />
               <span class="check__mark"></span>
               <span class="check__label">1 стол</span>
             </label>
-            <label class="reserve__check check">
+
+            <label class="reserve__check check ">
               <input type="checkbox" name="table_2" class="check__input" />
               <span class="check__mark"></span>
               <span class="check__label">2 стол</span>
             </label>
-            <label class="reserve__check check check--red">
+
+            <label class="reserve__check check check--disabled">
               <input type="checkbox" name="table_3" class="check__input" />
               <span class="check__mark"></span>
               <span class="check__label">3 стол</span>
             </label>
+
             <label class="reserve__check check check--red">
               <input type="checkbox" name="table_4" class="check__input" />
               <span class="check__mark"></span>
               <span class="check__label">4 стол</span>
             </label>
-            <label class="reserve__check check check--disabled">
-              <input type="checkbox" name="table_5" class="check__input" disabled />
+
+            <label class="reserve__check check ">
+              <input type="checkbox" name="table_5" class="check__input" />
               <span class="check__mark"></span>
-              <span class="check__label">5 стол </span>
+              <span class="check__label">5 стол</span>
             </label>
+
             <label class="reserve__check check check--red">
               <input type="checkbox" name="table_6" class="check__input" />
               <span class="check__mark"></span>
               <span class="check__label">6 стол</span>
             </label>
-            <label class="reserve__check check check--red">
+
+            <label class="reserve__check check ">
               <input type="checkbox" name="table_7" class="check__input" />
               <span class="check__mark"></span>
               <span class="check__label">7 стол</span>
             </label>
-            <label class="reserve__check check check--red">
+
+            <label class="reserve__check check check--disabled">
               <input type="checkbox" name="table_8" class="check__input" />
               <span class="check__mark"></span>
               <span class="check__label">8 стол</span>
             </label>
+
             <label class="reserve__check check check--red">
               <input type="checkbox" name="table_9" class="check__input" />
               <span class="check__mark"></span>
               <span class="check__label">9 стол</span>
             </label>
-            <label class="reserve__check check check--red">
+
+            <label class="reserve__check check ">
               <input type="checkbox" name="table_10" class="check__input" />
               <span class="check__mark"></span>
               <span class="check__label">10 стол</span>
             </label>
-            <label class="reserve__check check check--red">
+
+            <label class="reserve__check check ">
               <input type="checkbox" name="table_11" class="check__input" />
               <span class="check__mark"></span>
               <span class="check__label">11 стол</span>
             </label>
+
+
           </div>
 
-          <div class="reserve__schema">
-            <div class="reserve__schema-container">
-              <h4 class="reserve__schema-title">Сцена</h4>
-              <div class="reserve__schema-wrapper">
+          <div class="reserve__scheme">
+            <div class="reserve__scheme-container">
+              <h4 class="reserve__scheme-title">Сцена</h4>
+
+              <div class="reserve__scheme-wrapper">
                 <svg class="scene" width="780" height="399" viewBox="0 0 780 399" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g class="scene__dance-floor">
                     <path d="M462 82.5C462 121.436 430.436 153 391.5 153C352.564 153 321 121.436 321 82.5C321 43.5639 352.564 12 391.5 12C430.436 12 462 43.5639 462 82.5Z" fill="#1F1E1E" />
@@ -328,6 +368,7 @@
                     <rect opacity="0.01" y="185" width="95" height="121" fill="transparent" />
                   </g>
                 </svg>
+
               </div>
             </div>
           </div>
@@ -370,36 +411,73 @@
               </div>
             </div>
           </div>
+
+
         </form>
       </div>
+
     </article>
   </main>
+
   <footer class="page-footer">
     <div class="page-footer__container">
-      <div class="page-footer__border"></div>
+      <div class="page-footer__border"> </div>
       <div class="page-footer__wrapper">
-        <nav class="page-footer__nav">
-          <a href="" class="page-footer__nav-link">Календарь мероприятий</a>
-          <a href="" class="page-footer__nav-link">Провести мероприятие</a>
-          <a href="" class="page-footer__nav-link">Стать арендатором</a>
-          <a href="" class="page-footer__nav-link">Наши проекты</a>
-          <a href="" class="page-footer__nav-link">Контакты</a>
-        </nav>
-        <form class="page-footer__form subscribe">
-          <h4 class="subscribe__title">
-            Подпишись и будь в курсе происходящего
-          </h4>
-          <div class="subscribe__wrapper">
-            <input type="email" name="email" placeholder="Email" class="subscribe__input" required />
-            <button type="submit" class="subscribe__submit">Подписаться</button>
+        <div class="page-footer__start-panel">
+          <nav class="page-footer__nav">
+            <a href="" class="page-footer__nav-link">Календарь мероприятий</a>
+            <a href="" class="page-footer__nav-link">Провести мероприятие</a>
+            <a href="" class="page-footer__nav-link">Стать арендатором</a>
+            <a href="" class="page-footer__nav-link">Наши проекты</a>
+            <a href="" class="page-footer__nav-link">Контакты</a>
+          </nav>
+          <form action="https://jsonplaceholder.typicode.com/posts" id="js-subscribeForm" class="page-footer__form subcribe">
+            <h4 class="subcribe__title">
+              Подпишись и будь в курсе происходящего
+            </h4>
+            <div class="subcribe__wrapper">
+              <input type="email" name="email" placeholder="Email" class="subcribe__input" required />
+              <button type="submit" class="subcribe__submit">Подписаться</button>
+            </div>
+            <label class="subcribe__check check">
+              <input type="checkbox" class="check__input" name="agree" required />
+              <span class="check__mark"></span>
+              <span class="check__label">
+                Согласие на обработку персональных данных
+              </span>
+            </label>
+          </form>
+        </div>
+        <div class="page-footer__end-panel">
+          <div class="page-footer__end-panel__millenials">
+            © Millennials 2022
           </div>
-          <label class="subscribe__check check">
-            <input type="checkbox" class="check__input" name="agree" required />
-            <span class="check__mark"></span>
-            <span class="check__label">
-              Согласен на обработку персональных данных</span>
-          </label>
-        </form>
+
+          <div class="page-footer__end-panel__cookies_politica">
+            Политика конфиденциальности &nbsp; Cookies
+          </div>
+
+          <div class="page-footer__end-panel__icons">
+            <div class="page-footer__end-panel__icons-insta">
+              <svg width="58px" height="58px">
+                <use xlink:href="assets/icons/symbols.svg#insta" />
+              </svg>
+            </div>
+            <div class="page-footer__end-panel__icons-vk">
+              <svg width="58px" height="58px">
+                <use xlink:href="assets/icons/symbols.svg#vk" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="page-footer__end-panel__tagree">
+            <div class="text"> Создание и продвижение &nbsp;</div>
+
+            <svg width="57px" height="17px">
+              <use xlink:href="assets/icons/symbols.svg#tagree" />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
